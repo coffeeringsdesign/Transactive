@@ -1,0 +1,46 @@
+// Variables
+$taRed: #FF0000;
+$taBlue: #2689DC;
+$contentWidth: 1270px;
+
+
+// mixins
+@mixin largeText {
+  font: {
+    font: sans-serif;
+    size: 20px;
+    weight: bold;
+  }
+  color: black;
+}
+
+@mixin centerContent {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Styles
+
+body {
+  background-color: green;
+  font-family: sans-serif;
+}
+
+.emailBannerTop {
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: red;
+  height: 50px;
+  border-bottom: 2px black;
+  width: 100%;
+  .centeredAddress {
+    @include centerContent;
+    width: $contentWidth;
+  }
+}
+
+.header {
+
+}

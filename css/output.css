@@ -10,55 +10,46 @@ a {
   color: black;
 }
 
-.emailBannerTop {
-  display: flex;
-  background-color: white;
-  height: 80px;
-  border-bottom: 1px solid #949697;
-  width: 100%;
-}
-.emailBannerTop .centeredAddress {
+.totalHeader {
+  display: block;
   width: 1000px;
-  display: flex;
   margin-left: auto;
   margin-right: auto;
+}
+.totalHeader .header {
+  background-color: white;
+  display: flex;
   width: 1000px;
+  border-bottom: 1px solid #949697;
+  flex-direction: column;
+  padding-top: 10px;
+  position: fixed;
+  overflow: hidden;
+}
+.totalHeader .header .centeredAddress {
+  display: flex;
+  height: 80px;
   flex-direction: column;
   justify-content: flex-end;
+  border-bottom: 1px solid #949697;
 }
-.emailBannerTop .centeredAddress a {
+.totalHeader .header .centeredAddress a {
   text-decoration: none;
   color: black;
   padding-bottom: 10px;
   font-size: 18px;
 }
-
-.header {
-  width: 1000px;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  position: fixed;
-  display: flex;
-  overflow: hidden;
-  border-bottom: 1px solid #949697;
-  flex-direction: column;
-  font-family: "Muli", sans-serif;
-  font-size: 18px;
-  color: black;
-  padding-top: 10px;
-}
-.header .logowithNav {
+.totalHeader .header .logowithNav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
 }
-.header .logowithNav img {
+.totalHeader .header .logowithNav img {
   margin-top: 10px;
 }
-.header .logowithNav ul {
+.totalHeader .header .logowithNav ul {
   display: flex;
   width: 500px;
   height: 30px;
@@ -66,32 +57,32 @@ a {
   justify-content: space-between;
   font-size: 20px;
 }
-.header .logowithNav ul li {
+.totalHeader .header .logowithNav ul li {
   padding-right: 20px;
   padding-left: 20px;
 }
-.header .logowithNav ul li:hover {
+.totalHeader .header .logowithNav ul li:hover {
   background: #E9EEF0;
 }
-.header .logowithNav ul #homelink {
+.totalHeader .header .logowithNav ul #homelink {
   width: 100px;
   text-align: center;
   background: #E9EEF0;
 }
-.header .searchBar {
+.totalHeader .header .searchBar {
   display: inherit;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
 }
-.header .searchBar #searchSpot {
+.totalHeader .header .searchBar #searchSpot {
   border: 1px solid #949697;
   height: 30px;
   width: 300px;
   border-radius: 5px;
 }
-.header .headerlinkRow {
+.totalHeader .header .headerlinkRow {
   display: inherit;
   flex-direction: row;
   justify-content: space-between;
@@ -99,7 +90,7 @@ a {
   margin-bottom: 10px;
   height: 50px;
 }
-.header .headerlinkRow #upcomingBtn {
+.totalHeader .header .headerlinkRow #upcomingBtn {
   background-color: #2689DC;
   border: none;
   color: white;
@@ -110,7 +101,7 @@ a {
   font-size: 18px;
   border-radius: 30px;
 }
-.header .headerlinkRow .redBtn {
+.totalHeader .header .headerlinkRow .redBtn {
   background-color: #FF0000;
   border: none;
   color: white;
@@ -121,7 +112,7 @@ a {
   font-size: 18px;
   border-radius: 30px;
 }
-.header .headerlinkRow img {
+.totalHeader .header .headerlinkRow img {
   height: 100%;
 }
 
@@ -130,7 +121,6 @@ a {
   margin-top: 225px;
   display: flex;
   width: 1000px;
-  display: flex;
   margin-left: auto;
   margin-right: auto;
   flex-direction: column;

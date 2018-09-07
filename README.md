@@ -8,7 +8,11 @@
 
 _This is a rebuild of the current Transactive site. To show use of Sass, flexbox, and correct outside in CSS practices.
 
+The original site:
+
 ![The original site](img/Transactive.png?raw=true "Transactive")
+
+My rebuild:
 
 ![My Rebuild](img/rebuild.png?raw=true "My rebuilt of Transactive")
 _

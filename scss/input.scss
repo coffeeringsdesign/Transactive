@@ -9,8 +9,7 @@ $lineBorder: 1px solid #949697;
 @mixin largeText {
   font: {
     font: sans-serif;
-    size: 20px;
-    weight: bold;
+    size: 18px;
   }
   color: black;
 }
@@ -33,13 +32,26 @@ $lineBorder: 1px solid #949697;
   font-size: 16px;
 }
 
+@mixin navBars {
+  width: 400px;
+  list-style: none;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
 // Styles
 
 body {
   background-color: white;
   font-family: sans-serif;
+  font-size: 14px;
   margin: 0;
   padding: 0;
+}
+
+button {
+  border-radius: 10px;
+  @include button;
 }
 
 .emailBannerTop {
@@ -66,22 +78,61 @@ body {
 .header {
   display: flex;
   border-bottom: $lineBorder;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
   @include centerContent;
-  .logoIntro {
-    @include largeText;
+  @include largeText;
+  padding-top: 10px;
+  .logowithnav {
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logowithnav ul {
+    display: inline-flex;
+    @include navBars;
+  }
 
+  .searchBar {
+    display: inherit;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    #searchSpot {
+      width: 150px;
+    }
+  }
+  .headerlinkRow {
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    margin-bottom: 10px;
+    padding: -10;;
   }
 }
 
 .mainContent {
+  display: flex;
   @include centerContent;
   flex-direction: column;
-  .welcomeIntro {
 
+  
+  .welcomeIntro {
+    flex-wrap: wrap;
+    h1 {
+      color: red;
+    }
+    img {
+      float: right;
+    }
   }
 
   .imageBlocks {
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    justify-content: space-between;
 
   }
 
@@ -91,10 +142,27 @@ body {
   .upcomingEvents {
 
   }
+
   .bottomNav {
-
+    ul {
+      @include navBars;
+    }
   }
-  .bottomAddressBlock {
 
+  .bottomAddressBlock {
+    display: flex;
+    background-color: black;
+    color: white;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  #copyright {
+    margin-top: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
   }
 }

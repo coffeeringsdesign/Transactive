@@ -1,22 +1,55 @@
 body {
-  background-color: green;
+  background-color: white;
   font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .emailBannerTop {
-  top: 0;
-  right: 0;
-  left: 0;
-  background-color: red;
-  height: 50px;
-  border-bottom: 2px black;
+  display: flex;
+  background-color: white;
+  height: 80px;
+  border-bottom: 1px solid #949697;
   width: 100%;
 }
 .emailBannerTop .centeredAddress {
-  display: block;
+  width: 900px;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 1270px;
+  width: 900px;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.emailBannerTop .centeredAddress a {
+  text-decoration: none;
+  color: black;
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
+.header {
+  display: flex;
+  border-bottom: 1px solid #949697;
+  flex-direction: row;
+  width: 900px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header .logoIntro {
+  font-font: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.mainContent {
+  width: 900px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=output.css.map */

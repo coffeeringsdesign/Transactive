@@ -1,12 +1,12 @@
-# _{Application Name}_
+# _Transactive_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _Design and duplicate the current Transactive site._
 
-#### By _**{List of contributors}**_
+#### By _**Kendra Kelly**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This is a rebuild of the current Transactive site. To show use of Sass, flexbox, and correct outside in CSS practices._
 
 ## Setup/Installation Requirements
 
@@ -20,7 +20,19 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
 ## Objectives
 
-_Include screenshots of both the original site and your clone in your README._
+_Include screenshots of both the original site and your clone in your README.
+
+Style rules are created and organized using "outside in" best practices.
+
+Project exhibits understanding of box-model best practices.
+
+Flexbox is used to efficiently present groupings of similar or related elements.
+
+Styles are written in Sass and well-refactored using Sass functionality.
+
+Project was submitted by the Friday deadline.
+
+Project demonstrates an understanding of this week's concepts. If prompted, you can discuss your code with an instructor using the correct terminology._
 
 ## Support and contact details
 

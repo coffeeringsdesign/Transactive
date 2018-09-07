@@ -1,8 +1,10 @@
 // Variables
 $taRed: #FF0000;
 $taBlue: #2689DC;
-$contentWidth: 900px;
+$contentWidth: 1100px;
 $lineBorder: 1px solid #949697;
+$dkGray: #949697;
+$ltGray: #E2E4E5;
 
 
 // mixins
@@ -22,14 +24,14 @@ $lineBorder: 1px solid #949697;
 }
 
 @mixin button {
-  background-color: $taBlue;
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
+  border-radius: 20px;
 }
 
 @mixin navBars {
@@ -47,11 +49,6 @@ body {
   font-size: 14px;
   margin: 0;
   padding: 0;
-}
-
-button {
-  border-radius: 10px;
-  @include button;
 }
 
 .emailBannerTop {
@@ -108,7 +105,18 @@ button {
     justify-content: space-around;
     align-content: center;
     margin-bottom: 10px;
-    padding: -10;;
+    height: 50px;
+    #upcomingBtn {
+      background-color: $taBlue;
+      @include button;
+    }
+    #videoBtn {
+      background-color: $taRed;
+      @include button;
+    }
+    img {
+      height: 100%;
+    }
   }
 }
 
@@ -117,15 +125,31 @@ button {
   @include centerContent;
   flex-direction: column;
 
-  
+
   .welcomeIntro {
-    flex-wrap: wrap;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
     h1 {
       color: red;
+      font-size: 38px;
     }
-    img {
-      float: right;
+    p {
+      font-size: 18px;
     }
+    .introText {
+      display: inherit;
+      flex-direction: column;
+    }
+    .introImg {
+      display: inherit;
+      margin-top: 40px;
+      margin-left: 20px;
+    }
+
   }
 
   .imageBlocks {
@@ -139,15 +163,30 @@ button {
   .upcomingEventsIntro {
 
   }
-  .upcomingEvents {
 
+  .upcomingEvents {
+    background-color: $ltGray;
+    margin-bottom: 30px;
   }
 
+
+
+
   .bottomNav {
+    display: flex;
+    background-color: $dkGray;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
     ul {
       @include navBars;
     }
   }
+
+
+
+
 
   .bottomAddressBlock {
     display: flex;

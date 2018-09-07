@@ -6,44 +6,47 @@
 
 ## Description
 
-_This is a rebuild of the current Transactive site. To show use of Sass, flexbox, and correct outside in CSS practices._
+_This is a rebuild of the current Transactive site. To show use of Sass, flexbox, and correct outside in CSS practices.
+
+![The original site](Transactive.png)
+
+![my rebuild](rebuild.png)
+_
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _Clone this git: https://github.com/coffeeringsdesign/Transactive.git_
+* _use atom to edit html , js & css files_
+* _Chrome to see user interface_
+* _I recommend Github for version control_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
 ## Objectives
 
 _Include screenshots of both the original site and your clone in your README.
 
-Style rules are created and organized using "outside in" best practices.
+Style rules are created and organized using "outside in" best practices. x
 
-Project exhibits understanding of box-model best practices.
+Project exhibits understanding of box-model best practices. x
 
-Flexbox is used to efficiently present groupings of similar or related elements.
+Flexbox is used to efficiently present groupings of similar or related elements. x
 
-Styles are written in Sass and well-refactored using Sass functionality.
+Styles are written in Sass and well-refactored using Sass functionality. x
 
-Project was submitted by the Friday deadline.
+Project was submitted by the Friday deadline. x
 
 Project demonstrates an understanding of this week's concepts. If prompted, you can discuss your code with an instructor using the correct terminology._
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Please feel free to get in contact with me at kendra@coffeeringsdesign.com_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_I used Sass, Chrome & Atom._
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*DMI*
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2018 **_Kendra Kelly_**

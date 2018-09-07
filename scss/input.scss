@@ -5,7 +5,9 @@ $contentWidth: 1000px;
 $lineBorder: 1px solid #949697;
 $dkGray: #BFC2C3;
 $ltGray: #E9EEF0;
+$yellow: #E8EA5E;
 $sectionSpacing: 30px;
+$lineHeight: 40%;
 
 
 // mixins
@@ -17,11 +19,15 @@ $sectionSpacing: 30px;
   color: black;
 }
 
+@mixin smallCenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @mixin centerContent {
   width: $contentWidth;
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
+  @include smallCenter;
 }
 
 @mixin button {
@@ -37,10 +43,21 @@ $sectionSpacing: 30px;
 
 @mixin navBars {
   display: flex;
-  width: 400px;
+  width: 500px;
+  height: 30px;
   list-style: none;
-  display: inline-flex;
   justify-content: space-between;
+  font-size: 20px;
+}
+
+@mixin imageLinks {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 8px;
+  background-color: $yellow;
+  text-decoration: underline;
 }
 
 // Styles
@@ -48,9 +65,13 @@ $sectionSpacing: 30px;
 body {
   background-color: white;
   font-family: 'Muli', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   margin: 0;
   padding: 0;
+}
+
+a {
+color: black;
 }
 
 .emailBannerTop {
@@ -90,8 +111,23 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: center;
+    img {
+      margin-top: 10px;
+    }
     ul {
       @include navBars;
+      li {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+      li:hover {
+        background: $ltGray;
+      }
+      #homelink {
+        width: 100px;
+        text-align: center;
+        background: $ltGray;
+      }
     }
   }
 
@@ -120,7 +156,7 @@ body {
       background-color: $taBlue;
       @include button;
     }
-    #videoBtn {
+    .redBtn {
       background-color: $taRed;
       @include button;
     }
@@ -137,7 +173,6 @@ body {
 
 
   .welcomeIntro {
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -167,7 +202,29 @@ body {
     width: auto;
     flex-direction: row;
     justify-content: space-between;
+    margin: 0;
     margin-bottom: $sectionSpacing;
+    #image1 {
+      position: relative;
+      opacity: 0.5;
+      #imagetext1 {
+        @include imageLinks;
+      }
+    }
+    #image2 {
+      position: relative;
+      opacity: 0.5;
+      #imagetext2 {
+        @include imageLinks;
+      }
+    }
+    #image3 {
+      opacity: 0.5;
+      position: relative;
+      #imagetext3 {
+        @include imageLinks;
+      }
+    }
   }
 
   .upcomingEventsIntro {
@@ -177,6 +234,9 @@ body {
       text-align: center;
       font-size: 40px;
     }
+    img {
+      float: left;
+    }
   }
 
   .taWorkshop {
@@ -185,17 +245,48 @@ body {
     margin-bottom: 0;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    h3 {
+      font-size: 25px;
+    }
     .workshopInfo {
       flex-direction: column;
+      width: 600px;
+      line-height: $lineHeight;
+      p {
+        line-height: normal;
+      }
     }
     .workshopSetting {
-    flex-direction: column;
+      flex-direction: column;
+      text-align: right;
+      button {
+        @include button;
+        background-color: $taRed;
+      }
+      ul {
+        @include navBars;
+        flex-direction: column;
+      }
     }
   }
 
   .upcomingEvents {
     background-color: $ltGray;
     margin-bottom: $sectionSpacing;
+    display: flex;
+    flex-direction: row;
+    #presentedBy {
+      font-style: italic;
+    }
+    .presentedPic {
+      flex-direction: column;
+      margin-right: 20px;
+    }
+    .presentedInfo {
+      flex-direction: column;
+      margin-right: 200px;
+    }
   }
 
 
@@ -226,12 +317,17 @@ body {
     justify-content: space-around;
     text-align: center;
     font-size: 18px;
+    line-height: $lineHeight;
+    #mailingAdd {
+      text-decoration: underline;
+    }
   }
 
   #copyright {
     margin-top: 0;
+    font-size: 15px;
     background-color: black;
-    color: white;
+    color: $dkGray;
     text-align: center;
     padding-bottom: 10px;
   }

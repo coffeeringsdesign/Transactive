@@ -1,9 +1,13 @@
 body {
   background-color: white;
   font-family: "Muli", sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: black;
 }
 
 .emailBannerTop {
@@ -50,12 +54,28 @@ body {
   justify-content: space-between;
   align-content: center;
 }
+.header .logowithNav img {
+  margin-top: 10px;
+}
 .header .logowithNav ul {
   display: flex;
-  width: 400px;
+  width: 500px;
+  height: 30px;
   list-style: none;
-  display: inline-flex;
   justify-content: space-between;
+  font-size: 20px;
+}
+.header .logowithNav ul li {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.header .logowithNav ul li:hover {
+  background: #E9EEF0;
+}
+.header .logowithNav ul #homelink {
+  width: 100px;
+  text-align: center;
+  background: #E9EEF0;
 }
 .header .searchBar {
   display: inherit;
@@ -89,7 +109,7 @@ body {
   font-size: 18px;
   border-radius: 30px;
 }
-.header .headerlinkRow #videoBtn {
+.header .headerlinkRow .redBtn {
   background-color: #FF0000;
   border: none;
   color: white;
@@ -140,7 +160,47 @@ body {
   width: auto;
   flex-direction: row;
   justify-content: space-between;
+  margin: 0;
   margin-bottom: 30px;
+}
+.mainContent .imageBlocks #image1 {
+  position: relative;
+  opacity: 0.5;
+}
+.mainContent .imageBlocks #image1 #imagetext1 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 8px;
+  background-color: #E8EA5E;
+  text-decoration: underline;
+}
+.mainContent .imageBlocks #image2 {
+  position: relative;
+  opacity: 0.5;
+}
+.mainContent .imageBlocks #image2 #imagetext2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 8px;
+  background-color: #E8EA5E;
+  text-decoration: underline;
+}
+.mainContent .imageBlocks #image3 {
+  opacity: 0.5;
+  position: relative;
+}
+.mainContent .imageBlocks #image3 #imagetext3 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 8px;
+  background-color: #E8EA5E;
+  text-decoration: underline;
 }
 .mainContent .upcomingEventsIntro {
   background-color: #E9EEF0;
@@ -150,22 +210,68 @@ body {
   text-align: center;
   font-size: 40px;
 }
+.mainContent .upcomingEventsIntro img {
+  float: left;
+}
 .mainContent .taWorkshop {
   background-color: #E9EEF0;
   margin-top: 0;
   margin-bottom: 0;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+.mainContent .taWorkshop h3 {
+  font-size: 25px;
 }
 .mainContent .taWorkshop .workshopInfo {
   flex-direction: column;
+  width: 600px;
+  line-height: 40%;
+}
+.mainContent .taWorkshop .workshopInfo p {
+  line-height: normal;
 }
 .mainContent .taWorkshop .workshopSetting {
+  flex-direction: column;
+  text-align: right;
+}
+.mainContent .taWorkshop .workshopSetting button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 30px;
+  background-color: #FF0000;
+}
+.mainContent .taWorkshop .workshopSetting ul {
+  display: flex;
+  width: 500px;
+  height: 30px;
+  list-style: none;
+  justify-content: space-between;
+  font-size: 20px;
   flex-direction: column;
 }
 .mainContent .upcomingEvents {
   background-color: #E9EEF0;
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+}
+.mainContent .upcomingEvents #presentedBy {
+  font-style: italic;
+}
+.mainContent .upcomingEvents .presentedPic {
+  flex-direction: column;
+  margin-right: 20px;
+}
+.mainContent .upcomingEvents .presentedInfo {
+  flex-direction: column;
+  margin-right: 200px;
 }
 .mainContent .bottomNav {
   display: flex;
@@ -177,10 +283,11 @@ body {
 }
 .mainContent .bottomNav ul {
   display: flex;
-  width: 400px;
+  width: 500px;
+  height: 30px;
   list-style: none;
-  display: inline-flex;
   justify-content: space-between;
+  font-size: 20px;
 }
 .mainContent .bottomAddressBlock {
   display: flex;
@@ -191,11 +298,16 @@ body {
   justify-content: space-around;
   text-align: center;
   font-size: 18px;
+  line-height: 40%;
+}
+.mainContent .bottomAddressBlock #mailingAdd {
+  text-decoration: underline;
 }
 .mainContent #copyright {
   margin-top: 0;
+  font-size: 15px;
   background-color: black;
-  color: white;
+  color: #BFC2C3;
   text-align: center;
   padding-bottom: 10px;
 }

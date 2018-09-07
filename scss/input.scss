@@ -1,16 +1,17 @@
 // Variables
 $taRed: #FF0000;
 $taBlue: #2689DC;
-$contentWidth: 1100px;
+$contentWidth: 1000px;
 $lineBorder: 1px solid #949697;
-$dkGray: #949697;
-$ltGray: #E2E4E5;
+$dkGray: #BFC2C3;
+$ltGray: #E9EEF0;
+$sectionSpacing: 30px;
 
 
 // mixins
 @mixin largeText {
   font: {
-    font: sans-serif;
+    family: 'Muli', sans-serif;
     size: 18px;
   }
   color: black;
@@ -31,10 +32,11 @@ $ltGray: #E2E4E5;
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
-  border-radius: 20px;
+  border-radius: $sectionSpacing;
 }
 
 @mixin navBars {
+  display: flex;
   width: 400px;
   list-style: none;
   display: inline-flex;
@@ -45,7 +47,7 @@ $ltGray: #E2E4E5;
 
 body {
   background-color: white;
-  font-family: sans-serif;
+  font-family: 'Muli', sans-serif;
   font-size: 14px;
   margin: 0;
   padding: 0;
@@ -80,29 +82,37 @@ body {
   @include centerContent;
   @include largeText;
   padding-top: 10px;
-  .logowithnav {
-    display: inherit;
+
+
+  .logowithNav {
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-  }
-  .logowithnav ul {
-    display: inline-flex;
-    @include navBars;
+    align-content: center;
+    ul {
+      @include navBars;
+    }
   }
 
   .searchBar {
     display: inherit;
     flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
-    align-content: center;
+    align-items: center;
     #searchSpot {
-      width: 150px;
+      border: $lineBorder;
+      height: $sectionSpacing;
+      width: 300px;
+      border-radius: 5px;
     }
   }
+
   .headerlinkRow {
     display: inherit;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: center;
     margin-bottom: 10px;
     height: 50px;
@@ -131,7 +141,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: $sectionSpacing;
     align-items: center;
     h1 {
       color: red;
@@ -157,16 +167,35 @@ body {
     width: auto;
     flex-direction: row;
     justify-content: space-between;
-
+    margin-bottom: $sectionSpacing;
   }
 
   .upcomingEventsIntro {
+    background-color: $ltGray;
+    margin-bottom: 0;
+    h1 {
+      text-align: center;
+      font-size: 40px;
+    }
+  }
 
+  .taWorkshop {
+    background-color: $ltGray;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    .workshopInfo {
+      flex-direction: column;
+    }
+    .workshopSetting {
+    flex-direction: column;
+    }
   }
 
   .upcomingEvents {
     background-color: $ltGray;
-    margin-bottom: 30px;
+    margin-bottom: $sectionSpacing;
   }
 
 
@@ -175,10 +204,10 @@ body {
   .bottomNav {
     display: flex;
     background-color: $dkGray;
-    height: 60px;
+    height: 80px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: $sectionSpacing;
     ul {
       @include navBars;
     }
@@ -193,8 +222,10 @@ body {
     background-color: black;
     color: white;
     flex-direction: row;
+    align-content: center;
     justify-content: space-around;
     text-align: center;
+    font-size: 18px;
   }
 
   #copyright {

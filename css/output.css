@@ -10,6 +10,17 @@ a {
   color: black;
 }
 
+.backgroundBlock {
+  display: block;
+  background-color: white;
+  width: 100%;
+  z-index: 3;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  height: 299px;
+}
+
 .totalHeader {
   display: block;
   width: 1000px;
@@ -17,14 +28,15 @@ a {
   margin-right: auto;
 }
 .totalHeader .header {
+  z-index: 3;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
   background-color: white;
   display: flex;
   width: 1000px;
   border-bottom: 1px solid #949697;
   flex-direction: column;
-  padding-top: 10px;
-  position: fixed;
-  overflow: hidden;
 }
 .totalHeader .header .centeredAddress {
   display: flex;
@@ -50,6 +62,7 @@ a {
   margin-top: 10px;
 }
 .totalHeader .header .logowithNav ul {
+  margin-right: 5px;
   display: flex;
   width: 500px;
   height: 30px;
@@ -86,7 +99,7 @@ a {
   display: inherit;
   flex-direction: row;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   margin-bottom: 10px;
   height: 50px;
 }
@@ -100,6 +113,10 @@ a {
   display: inline-block;
   font-size: 18px;
   border-radius: 30px;
+}
+.totalHeader .header .headerlinkRow #fblike {
+  width: 90px;
+  height: 30px;
 }
 .totalHeader .header .headerlinkRow .redBtn {
   background-color: #FF0000;
@@ -117,8 +134,9 @@ a {
 }
 
 .mainContent {
+  z-index: -1;
   background-color: white;
-  margin-top: 225px;
+  margin-top: 300px;
   display: flex;
   width: 1000px;
   margin-left: auto;
@@ -149,6 +167,7 @@ a {
   margin-left: 20px;
 }
 .mainContent .imageBlocks {
+  z-index: 1;
   display: flex;
   width: auto;
   flex-direction: row;
@@ -156,88 +175,86 @@ a {
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 30px;
+}
+.mainContent .imageBlocks #image1, .mainContent .imageBlocks #image2, .mainContent .imageBlocks #image3 {
+  position: relative;
   opacity: 0.5;
 }
-.mainContent .imageBlocks #image1 {
-  position: relative;
-}
-.mainContent .imageBlocks #image1 #imagetext1 {
+
+#imagetext1, #imagetext2, #imagetext3 {
   display: flex;
-  justify-content: center;
   align-items: flex-end;
   position: absolute;
   bottom: 8px;
+  text-align: center;
+  width: 90%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
   background-color: #E8EA5E;
   text-decoration: underline;
-  opacity: 1;
+  opacity: none;
+  text-align: center;
 }
-.mainContent .imageBlocks #image2 {
-  position: relative;
-}
-.mainContent .imageBlocks #image2 #imagetext2 {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  position: absolute;
-  bottom: 8px;
-  background-color: #E8EA5E;
-  text-decoration: underline;
-  opacity: 1;
-}
-.mainContent .imageBlocks #image3 {
-  position: relative;
-}
-.mainContent .imageBlocks #image3 #imagetext3 {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  position: absolute;
-  bottom: 8px;
-  background-color: #E8EA5E;
-  text-decoration: underline;
-  opacity: 1;
-}
-.mainContent .upcomingEventsIntro {
-  position: relative;
+
+.greyBackground {
+  width: 100%;
+  background-size: cover;
   background-color: #E9EEF0;
+  margin-bottom: 30px;
+}
+.greyBackground .centeredEvents {
+  display: flex;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+}
+.greyBackground .centeredEvents .upcomingEventsIntro {
+  z-index: 2;
   margin-bottom: 0;
 }
-.mainContent .upcomingEventsIntro h1 {
+.greyBackground .centeredEvents .upcomingEventsIntro h1 {
   text-align: center;
 }
-.mainContent .upcomingEventsIntro h3 {
+.greyBackground .centeredEvents .upcomingEventsIntro #LCClogo {
+  position: relative;
+}
+.greyBackground .centeredEvents .upcomingEventsIntro h3 {
+  position: absolute;
+  height: 40px;
+  bottom: -5px;
+  left: 150px;
   text-align: center;
   font-size: 30px;
-  color: brown;
+  color: #6D4B19;
   background-color: tan;
   width: 500px;
   font-family: serif;
-  bottom: 700px;
 }
-.mainContent .taWorkshop {
-  background-color: #E9EEF0;
+.greyBackground .centeredEvents .taWorkshop {
   margin-top: 0;
   margin-bottom: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.mainContent .taWorkshop h3 {
+.greyBackground .centeredEvents .taWorkshop h3 {
   font-size: 25px;
 }
-.mainContent .taWorkshop .workshopInfo {
+.greyBackground .centeredEvents .taWorkshop .workshopInfo {
   flex-direction: column;
   width: 900px;
   line-height: 40%;
 }
-.mainContent .taWorkshop .workshopInfo p {
+.greyBackground .centeredEvents .taWorkshop .workshopInfo p {
   line-height: normal;
 }
-.mainContent .taWorkshop .workshopSetting {
+.greyBackground .centeredEvents .taWorkshop .workshopSetting {
   flex-direction: column;
   text-align: right;
 }
-.mainContent .taWorkshop .workshopSetting button {
+.greyBackground .centeredEvents .taWorkshop .workshopSetting button {
   border: none;
   color: white;
   padding: 15px 32px;
@@ -248,33 +265,43 @@ a {
   border-radius: 30px;
   background-color: #FF0000;
 }
-.mainContent .taWorkshop .workshopSetting ul {
+.greyBackground .centeredEvents .taWorkshop .workshopSetting ul {
   display: flex;
+  flex-direction: column;
   width: 500px;
-  height: 30px;
+  height: 90px;
   list-style: none;
   justify-content: space-between;
   font-size: 20px;
-  flex-direction: column;
 }
-.mainContent .upcomingEvents {
-  background-color: #E9EEF0;
+.greyBackground .centeredEvents .upcomingEvents {
   margin-bottom: 30px;
   display: flex;
   flex-direction: row;
 }
-.mainContent .upcomingEvents #presentedBy {
+.greyBackground .centeredEvents .upcomingEvents #presentedBy {
   font-style: italic;
 }
-.mainContent .upcomingEvents .presentedPic {
+.greyBackground .centeredEvents .upcomingEvents .presentedPic {
+  float: left;
   flex-direction: column;
   margin-right: 20px;
 }
-.mainContent .upcomingEvents .presentedInfo {
+.greyBackground .centeredEvents .upcomingEvents .presentedInfo {
   flex-direction: column;
   margin-right: 200px;
 }
-.mainContent .bottomNav {
+
+.pageBottom {
+  z-index: -1;
+  background-color: white;
+  display: flex;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+}
+.pageBottom .bottomNav {
   display: flex;
   background-color: #BFC2C3;
   height: 80px;
@@ -282,7 +309,7 @@ a {
   align-items: center;
   margin-bottom: 30px;
 }
-.mainContent .bottomNav ul {
+.pageBottom .bottomNav ul {
   display: flex;
   width: 500px;
   height: 30px;
@@ -290,7 +317,10 @@ a {
   justify-content: space-between;
   font-size: 20px;
 }
-.mainContent .bottomAddressBlock {
+.pageBottom .bottomAddressBlock {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   background-color: black;
   color: white;
@@ -301,10 +331,13 @@ a {
   font-size: 18px;
   line-height: 40%;
 }
-.mainContent .bottomAddressBlock #mailingAdd {
+.pageBottom .bottomAddressBlock #mailingAdd {
   text-decoration: underline;
 }
-.mainContent #copyright {
+.pageBottom #copyright {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 0;
   font-size: 15px;
   background-color: black;

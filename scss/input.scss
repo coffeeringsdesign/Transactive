@@ -44,13 +44,16 @@ $lineHeight: 40%;
 
 @mixin imageLinks {
   display: flex;
-  justify-content: center;
   align-items: flex-end;
   position: absolute;
   bottom: 8px;
+  text-align: center;
+  width: 90%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
   background-color: $yellow;
   text-decoration: underline;
-  opacity: 1;
 }
 
 // Styles
@@ -67,19 +70,31 @@ a {
 color: black;
 }
 
+.backgroundBlock {
+  display: block;
+  background-color: white;
+  width: 100%;
+  z-index: 3;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  height: 299px;
+}
+
 .totalHeader {
   display: block;
   @include centerContent;
 
   .header {
+    z-index: 3;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
     background-color: white;
     display: flex;
     width: $contentWidth;
     border-bottom: $lineBorder;
     flex-direction: column;
-    padding-top: 10px;
-    position: fixed;
-    overflow: hidden;
 
     .centeredAddress {
       display: flex;
@@ -105,6 +120,7 @@ color: black;
         margin-top: 10px;
       }
       ul {
+        margin-right: 5px;
         @include navBars;
         li {
           padding-right: 20px;
@@ -139,12 +155,16 @@ color: black;
       display: inherit;
       flex-direction: row;
       justify-content: space-between;
-      align-content: center;
+      align-items: center;
       margin-bottom: 10px;
       height: 50px;
       #upcomingBtn {
         background-color: $taBlue;
         @include button;
+      }
+      #fblike {
+        width: 90px;
+        height: 30px;
       }
       .redBtn {
         background-color: $taRed;
@@ -159,12 +179,12 @@ color: black;
 
 
 .mainContent {
+  z-index: -1;
   background-color: white;
-  margin-top: 225px;
+  margin-top: 300px;
   display: flex;
   @include centerContent;
   flex-direction: column;
-
 
   .welcomeIntro {
     display: flex;
@@ -188,10 +208,10 @@ color: black;
       margin-top: 40px;
       margin-left: 20px;
     }
-
   }
 
   .imageBlocks {
+    z-index: 1;
     display: flex;
     width: auto;
     flex-direction: row;
@@ -199,97 +219,115 @@ color: black;
     margin-left: 0;
     margin-right: 0;
     margin-bottom: $sectionSpacing;
-    opacity: 0.5;
-    #image1 {
+    #image1, #image2, #image3 {
       position: relative;
-      #imagetext1 {
-        @include imageLinks;
-      }
-    }
-    #image2 {
-      position: relative;
-      #imagetext2 {
-        @include imageLinks;
-      }
-    }
-    #image3 {
-      position: relative;
-      #imagetext3 {
-        @include imageLinks;
-      }
+      opacity: 0.5;
     }
   }
+}
 
-  .upcomingEventsIntro {
-    position: relative;
-    background-color: $ltGray;
-    margin-bottom: 0;
-    h1 {
-      text-align: center;
-    }
-    h3 {
-      text-align: center;
-      font-size: 30px;
-      color: brown;
-      background-color: tan;
-      width: 500px;
-      font-family: serif;
-      bottom: 700px;
-    }
-    img {
-    }
-  }
+#imagetext1, #imagetext2, #imagetext3 {
+  @include imageLinks;
+  opacity: none;
+  text-align: center;
 
-  .taWorkshop {
-    background-color: $ltGray;
-    margin-top: 0;
-    margin-bottom: 0;
+}
+
+.greyBackground {
+  width: 100%;
+  background-size: cover;
+  background-color: $ltGray;
+  margin-bottom: $sectionSpacing;
+  .centeredEvents {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    h3 {
-      font-size: 25px;
-    }
-    .workshopInfo {
-      flex-direction: column;
-      width: 900px;
-      line-height: $lineHeight;
-      p {
-        line-height: normal;
+    @include centerContent;
+    flex-direction: column;
+
+    .upcomingEventsIntro {
+      z-index: 2;
+      margin-bottom: 0;
+      h1 {
+        text-align: center;
+      }
+      #LCClogo {
+        position: relative;
+      }
+      h3 {
+        position: absolute;
+        height: 40px;
+        bottom: -5px;
+        left: 150px;
+        text-align: center;
+        font-size: 30px;
+        color: #6D4B19;
+        background-color: tan;
+        width: 500px;
+        font-family: serif;
       }
     }
-    .workshopSetting {
-      flex-direction: column;
-      text-align: right;
-      button {
-        @include button;
-        background-color: $taRed;
+
+    .taWorkshop {
+      margin-top: 0;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      h3 {
+        font-size: 25px;
       }
-      ul {
-        @include navBars;
+      .workshopInfo {
         flex-direction: column;
+        width: 900px;
+        line-height: $lineHeight;
+        p {
+          line-height: normal;
+        }
+      }
+      .workshopSetting {
+        flex-direction: column;
+        text-align: right;
+        button {
+          @include button;
+          background-color: $taRed;
+          }
+        ul {
+          display: flex;
+          flex-direction: column;
+          width: 500px;
+          height: 90px;
+          list-style: none;
+          justify-content: space-between;
+          font-size: 20px;
+          }
+      }
+    }
+
+    .upcomingEvents {
+      margin-bottom: $sectionSpacing;
+      display: flex;
+      flex-direction: row;
+      #presentedBy {
+        font-style: italic;
+      }
+      .presentedPic {
+        float: left;
+        flex-direction: column;
+        margin-right: 20px;
+      }
+      .presentedInfo {
+        flex-direction: column;
+        margin-right: 200px;
       }
     }
   }
+}
 
-  .upcomingEvents {
-    background-color: $ltGray;
-    margin-bottom: $sectionSpacing;
-    display: flex;
-    flex-direction: row;
-    #presentedBy {
-      font-style: italic;
-    }
-    .presentedPic {
-      flex-direction: column;
-      margin-right: 20px;
-    }
-    .presentedInfo {
-      flex-direction: column;
-      margin-right: 200px;
-    }
-  }
-
+.pageBottom {
+  z-index: -1;
+  background-color: white;
+  display: flex;
+  @include centerContent;
+  flex-direction: column;
   .bottomNav {
     display: flex;
     background-color: $dkGray;
@@ -303,10 +341,8 @@ color: black;
   }
 
 
-
-
-
   .bottomAddressBlock {
+    @include centerContent;
     display: flex;
     background-color: black;
     color: white;
@@ -322,6 +358,7 @@ color: black;
   }
 
   #copyright {
+    @include centerContent;
     margin-top: 0;
     font-size: 15px;
     background-color: black;
